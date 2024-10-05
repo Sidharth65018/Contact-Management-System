@@ -3,7 +3,6 @@ import sqlite3
 import tkinter.ttk as ttk
 import tkinter.messagebox as tkMessageBox
 
-#DEVELOPED BY Mark Arvin
 root = Tk()
 root.title("Contact List")
 width = 700
@@ -23,8 +22,6 @@ GENDER = StringVar()
 AGE = StringVar()
 ADDRESS = StringVar()
 CONTACT = StringVar()
-
-
 
 #============================METHODS=====================================
 
@@ -156,9 +153,7 @@ def OnSelected(event):
     #==================BUTTONS==============================
     btn_updatecon = Button(ContactForm, text="Update", width=50, command=UpdateData)
     btn_updatecon.grid(row=6, columnspan=2, pady=10)
-
-
-#fn1353p    
+    
 def DeleteData():
     if not tree.selection():
        result = tkMessageBox.showwarning('', 'Please Select Something First!', icon="warning")
@@ -235,15 +230,10 @@ def AddNewWindow():
     contact = Entry(ContactForm, textvariable=CONTACT,  font=('arial', 14))
     contact.grid(row=5, column=1)
     
-
-    #==================BUTTONS==============================
+#==================BUTTONS==============================
     btn_addcon = Button(ContactForm, text="Save", width=50, command=SubmitData)
     btn_addcon.grid(row=6, columnspan=2, pady=10)
 
-
-
-
-    
 #============================FRAMES======================================
 Top = Frame(root, width=500, bd=1, relief=SOLID)
 Top.pack(side=TOP)
@@ -299,4 +289,3 @@ tree.bind('<Double-Button-1>', OnSelected)
 if __name__ == '__main__':
     Database()
     root.mainloop()
-    
